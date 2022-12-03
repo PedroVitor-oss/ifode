@@ -1,0 +1,42 @@
+<link rel="stylesheet" href="/css/singin.css">
+<div class="main">
+    <div class="meio"></div>
+    <div class="meio card">
+        <form action="/createCont" method="post">
+            <h1 class="title">cadastre-se para fode gostoso</h1>
+            <h1>Name</h1>
+            <input type="text" name="name" placeholder="Name" required>
+            <h1>Email</h1>
+            <input type="email" name="email" class="email" placeholder="Email" required>
+            <h1>Senha</h1>
+            <input type="password" name="password" placeholder="Senha" required>
+            <div class="cont-premium">    
+                <input type="checkbox" name="premium" id="premeium">
+                <label for="premeium">
+                    <span><i class="fa-solid fa-star"></i></span>
+                    Conta premeium
+                </label>
+            </div>
+            <button type="submit">cadastrar</button>
+        </form>
+    </div>
+</div>
+{{!-- carregar banco de dados --}}
+<script>
+    let emails = [];
+    {{#each contas}}
+    emails.push("{{email}}");
+    {{/each}}
+    $('button').click(()=>{
+        
+      //  document.querySelector('form').doNotSubmit();
+        for(let email of emails){
+              
+            if(email == $('input.email').val()){
+              alert("conta já utilizada");
+               $("form").attr("action","/singin");
+               $("form").attr("method","get");
+            }
+        }
+    })
+</script>

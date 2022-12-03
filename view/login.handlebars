@@ -1,0 +1,42 @@
+<link rel="stylesheet" href="/css/singin.css">
+<div class="main">
+    <div class="meio"></div>
+    <div class="meio card">
+        <form action="/login" method="post">
+            <h1 class="title">entre para fode como nunca</h1>
+            <h1>Email</h1>
+            <input type="email" name="email" class="email" placeholder="Email" required>
+            <h1>Senha</h1>
+            <input type="password" class="senha" name="password" placeholder="Senha" required>
+            <button type="submit">entrar</button>
+        </form>
+    </div>
+</div>
+{{!-- carregar banco de dados --}}
+<script>
+    let contas = [];
+    {{#each contas}}
+    emails.push(
+        {
+        email:"{{email}}",
+        senha:"{{senha}}"
+        });
+    {{/each}}
+    $('button').click(()=>{
+        
+      let contancontrada  = false;
+        for(let email of emails){
+              
+            if(email == $('input.email').val()){
+                if(senha == $('input.senha').val()){
+                  contancontrada = 1;  
+                }
+            }
+        }
+        if(!contancontrada){
+                 alert("conta não encontrada");
+               $("form").attr("action","/login");
+               $("form").attr("method","get");
+        }
+    })
+</script>
