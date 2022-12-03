@@ -38,6 +38,11 @@
         </div>
     </main>
 </header>
+<section class="busca">
+    <main>
+        <input type="text" id="busca" placeholder="Quem esta buscando?"><button id="bt-busca"><i class="fa-solid fa-magnifying-glass"></i></button>
+    </main>
+</section>
 <section class="ifoders">
     <main>
         {{#each datas}}
@@ -55,9 +60,8 @@
 
     </main>
 </section>
-{{!-- <iframe src="/videos/publi.mp4" frameborder="0"></iframe> --}}
 <script>
-   
+    
     let conta = {
         nome:"{{conta.nome}}",
         }
@@ -82,4 +86,56 @@
     }else{
      $('iframe').remove();
      }
+</script>
+{{!-- busca --}}
+<script>
+let datas=[
+    {{#each datas}}
+    {
+        nome:"{{nome}}",
+        img:"{{img}}",
+        cidade:"{{cidade}}"
+    }
+    {{/each}}
+    ]
+    $("button#bt-busca").click(()=>{
+        for (data of datas){
+            if(data.nome == $("input#busca").val()){
+                $("input#busca").val(" ")
+                $("section.ifoders main").html(`
+                    <div class="ifoder">
+                        <div class="img">
+                            <img src="/img/`+data.img+`" alt="" srcset="">
+                        </div>
+                        <h1 class="name">"`+data.nome+`</h1>
+                        <h1>`+cidade+`</h1>
+                        
+                    </div>
+                `);
+            }
+        }
+    })
+    jQuery(document).on('keyup',function(evt) {
+    if (evt.keyCode == 13) {
+       if($("input#busca").is(":focus")){
+           for (data of datas){
+            if(data.nome == $("input#busca").val()){
+                $("input#busca").val(" ")
+                $("section.ifoders main").html(`
+                    <div class="ifoder">
+                        <div class="img">
+                            <img src="/img/`+data.img+`" alt="" srcset="">
+                        </div>
+                        <h1 class="name">"`+data.nome+`</h1>
+                        <h1>`+cidade+`</h1>
+                        
+                    </div>
+                `);
+
+            }
+        }
+        }
+    }
+});
+    
 </script>

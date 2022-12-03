@@ -1,7 +1,46 @@
+section.busca
+{
+    padding-top:106px;
+    display: flex;
+    justify-content: center;
+}
+section.busca main{
+    display: flex;
+    padding: 10px 0;
+    justify-content: center;
+}
+section.busca main input{
+    color: #3e3e3e;
+    background: transparent;
+    font-weight: 500;
+    outline: none;
+    border-radius: 4px;
+    border: 1px solid #dcdcdc;
+    position: relative;
+    padding: 10px 20px;
+    height: auto;
+    z-index: 1;
+    width: 40%;
+    font-size: 1.5rem;
+    line-height: 20px;
+}
+section.busca main button{
+    width:10%;
+    background:#ea1d2c;
+    color:#fff;
+    padding:10px;
+    font-size:30px;
+    height:66px;
+    margin-left:10px;
+    border:2px solid #ea1d2c;
+    border-radius:10px;
+    cursor: pointer;
+    
+}
 section.ifoders{
     display: flex;
     justify-content: center;
-    padding-top:106px;
+   
 }
 section.ifoders main{
     display:flex;
