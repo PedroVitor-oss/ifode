@@ -1,0 +1,36 @@
+section.ifoders{
+    display: flex;
+    justify-content: center;
+    padding-top:106px;
+}
+section.ifoders main{
+    display:flex;
+    flex-wrap: wrap;
+}
+div.ifoder{
+    width:20%;
+    border-radius:10px;
+    min-height: 350px;
+    background:#e8e8e8;
+    scale:0.9;
+    text-align: center;
+    transition:0.5s;
+}
+div.ifoder:hover{
+    scale:1;
+}
+div.ifoder div.img{
+    width:100%;
+    height: 250px;
+    /* background-color: red; */
+    display:flex;
+    
+    align-items: center;
+    
+}
+div.ifoder div.img img{
+    width: 100%;
+}
+div.ifoder h1.name{
+   margin-top:30px;
+}

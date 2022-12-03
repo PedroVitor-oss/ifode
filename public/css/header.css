@@ -1,0 +1,80 @@
+header{
+    display: flex;
+    justify-content: center;
+    height:66px;
+    background-color: #f7f7f7;
+    padding:20px 0;
+    position: fixed;
+    z-index:10;
+    width:100vw;
+}
+header main{
+    display:flex;
+    
+}
+header main div{
+    flex:1;
+    color:#fff;
+}
+header main div.logo a{
+    padding-left: 30px;
+    display: flex;
+    align-items: center;
+    color:#ea1d2c;
+    font-weight: 900;
+    font-size:40px;
+    user-select: none;
+}
+
+header main div.tags{
+    display:flex;
+    align-items: center;
+}
+header main div.tags span{
+    color:#3e3e3e;
+    margin:0 10px;
+    font-size:25px;
+    user-select: none;
+    cursor: pointer;
+}
+header main div.conta{
+    display:flex;
+    align-items: center;
+}
+header main div.conta i{
+    font-weight: 900;
+    color: #3e3e3e;
+    font-size: 40px;
+    margin-left: 10px;
+
+}
+header main div.conta h1{
+    color:#3e3e3e;
+    max-width: 155px;
+    overflow: hidden;
+    user-select: none;
+}
+header main div.conta span.button.boder{
+    background:transparent;
+    color: #ea1d2c;
+    border:none;
+
+
+}
+header main div.conta span.button:hover{
+    opacity: 0.8;
+}
+header main div.conta span.button{
+    transition:0.5s;
+    background:#ea1d2c;
+    padding:10px 15px;
+    border: 3px solid #ea1d2c;
+    color:#fff;
+    font-size:23px;
+    min-width:94px;
+    display:flex;
+    justify-content: center;
+    margin:0 10px;
+    border-radius:10px;
+    cursor: pointer;
+}

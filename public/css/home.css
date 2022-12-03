@@ -1,73 +1,6 @@
-*{
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    margin:0;
-}
-main{
-    width:1366px;
-    height:100%;
-}
-header{
-    display: flex;
-    justify-content: center;
-    height:66px;
-    background-color: #f7f7f7;
-    padding:20px 0;
-    position: fixed;
-    z-index:10;
-    width:100vw;
-}
-header main{
-    display:flex;
-    
-}
-header main div{
-    flex:1;
-    color:#fff;
-}
-header main div.logo{
-    padding-left: 30px;
-    display: flex;
-    align-items: center;
-    color:#ea1d2c;
-    font-weight: 900;
-    font-size:40px;
-}
-header main div.tags{
-    display:flex;
-    align-items: center;
-}
-header main div.tags span{
-    color:#3e3e3e;
-    margin:0 10px;
-    font-size:25px;
-}
-header main div.conta{
-    display:flex;
-    align-items: center;
-}
-header main div.conta span.button.boder{
-    background:transparent;
-    color: #ea1d2c;
-    border:none;
 
-}
-header main div.conta span.button:hover{
-    opacity: 0.8;
-}
-header main div.conta span.button{
-    transition:0.5s;
-    background:#ea1d2c;
-    padding:10px 15px;
-    border: 3px solid #ea1d2c;
-    color:#fff;
-    font-size:23px;
-    min-width:94px;
-    display:flex;
-    justify-content: center;
-    margin:0 10px;
-    border-radius:10px;
-    cursor: pointer;
-}
+
+
 section.descricao{
     background:#f7f7f7;
     display:flex;
@@ -118,6 +51,17 @@ section.opitions div.opition div.descrition{
     padding-left:30px;
     align-items: center;
 }
+section.opitions div.opition div.img{
+    display:flex;
+    justify-content: center;
+    align-items: center;    
+}
+section.opitions div.opition div.img i{
+    color:#fff;
+    font-size: 200px;
+    transform: rotate(45deg);
+ 
+}
 section.rodape{
     height:150px;
     margin-top:50px;
@@ -138,9 +82,7 @@ section.melhores-itens{
     height:auto;
     padding-top:40px;
 }
-section.melhores-itens main{
 
-}
 section.melhores-itens main h1.title{
     border-bottom: 1px solid gray;
     margin-bottom:20px;

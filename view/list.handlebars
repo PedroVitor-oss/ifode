@@ -1,0 +1,71 @@
+<link rel="stylesheet" href="/css/header.css">
+<link rel="stylesheet" href="/css/list.css">
+<header>
+    <main>
+        <div class="logo">
+            <a href="/">
+                <span>iFode</span>
+            </a>
+        </div>
+        <div class="tags">
+            <a href="/tags/solteiras">
+                <span>
+                    solteira
+                </span>
+            </a>
+            <a href="/tags/casadas">
+                <span>
+                    casada
+                </span>
+            </a>
+            <a href="/tags/pornStars">
+                <span>
+                    pornStar
+                </span>
+            </a>
+        </div>
+        <div class="conta">
+            <a href="/singin">
+                <span class="button boder">
+                    cadastrar
+                </span>
+            </a>
+            <a href="/login">
+                <span class="button ">
+                    entra
+                </span>
+            </a>
+        </div>
+    </main>
+</header>
+<section class="ifoders">
+    <main>
+        {{#each datas}}
+        <div class="ifoder">
+            
+            <div class="img">
+
+                <img src="/img/{{img}}" alt="" srcset="">
+            </div>
+            <h1 class="name">{{nome}}</h1>
+            <h1>{{cidade}}</h1>
+            
+        </div>
+        {{/each}}
+
+    </main>
+</section>
+
+<script>
+    let conta = {
+        nome:"{{conta.nome}}",
+        }
+    if(conta.nome!=""){
+        $("header div.conta ").html(`<h1>`+conta.nome+`</h1><i class="fa-solid fa-circle-user"></i>`);
+    }
+    let tagActive = {{tagActive}};
+    let listSpan = $(`header div.tags span`);
+    $(listSpan[tagActive]).css("border-bottom","2px solid red");
+    $(listSpan[tagActive]).css("color","red");
+    $(listSpan[tagActive]).css("scale","1.3");
+</script>

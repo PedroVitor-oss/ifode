@@ -1,28 +1,40 @@
 <link rel="stylesheet" href="/css/home.css">
+<link rel="stylesheet" href="/css/header.css">
 <header>
     <main>
         <div class="logo">
-            <span>iFode</span>
+            <a href="/">
+                <span>iFode</span>
+            </a>
         </div>
         <div class="tags">
-            <span>
-                solteira
-            </span>
-            <span>
-                casada
-            </span>
-            <span>
-                pornStar
-            </span>
+            <a href="/tags/solteiras">
+                <span>
+                    solteira
+                </span>
+            </a>
+            <a href="/tags/casadas">
+                <span>
+                    casada
+                </span>
+            </a>
+            <a href="/tags/pornStars">
+                <span>
+                    pornStar
+                </span>
+            </a>
         </div>
         <div class="conta">
-           
-            <span class="button boder">
-                cadastrar
-            </span>
-            <span class="button ">
-                entra
-            </span>
+            <a href="/singin">
+                <span class="button boder">
+                    cadastrar
+                </span>
+            </a>
+            <a href="/login">
+                <span class="button ">
+                    entra
+                </span>
+            </a>
         </div>
     </main>
 </header>
@@ -41,7 +53,7 @@
                 pornStars
             </div>
             <div class="img">
-                <img src="/img/start.svg" alt="" srcset="">
+                <i class="fa-regular fa-star"></i>
             </div>
         </div>
         <div class="opition" style="background:yellow;">
@@ -49,7 +61,7 @@
                 casadas
             </div>
             <div class="img">
-                <img src="/img/aliaca.svg" alt="" srcset="">
+                <i class="fa-solid fa-ring"></i>
             </div>
         </div>
     </main>
@@ -90,7 +102,6 @@
        
         }
     if(conta.nome!=""){
-        //$('header div.cont').html(conta.nome+` <ion-icon name="person-circle-outline"></ion-icon>`)
-       // alert(conta.nome);
+        $("header div.conta ").html(`<h1>`+conta.nome+`</h1><i class="fa-solid fa-circle-user"></i>`);
     }
 </script>
