@@ -34,3 +34,25 @@ div.ifoder div.img img{
 div.ifoder h1.name{
    margin-top:30px;
 }
+div.fosco{
+    position: fixed;
+    top:0;
+    left:0;
+    width:100vw;
+    height:1000vh;
+    background:rgba(0,0,0,0.5);
+    z-index: 100;
+    /* display:flex;
+    justify-content: center;
+    align-items: center; */
+}
+div.fosco button{
+    margin: 10px;
+    scale:2
+}
+iframe{
+    position: absolute;
+    top: 40vh;
+    left:40vw;
+    scale:3
+}
