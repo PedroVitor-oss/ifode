@@ -10,7 +10,7 @@ body{
 }
 div.main{
     width:90vw;
-    height:90vh;
+    height:auto;
     border-radius: 10px;
     /* box-shadow: 0 0 10px black; */
     display:flex;
@@ -91,6 +91,7 @@ div.main div.card form button{
     font-size:30px;
     height:66px;
     margin-left:20%;
+    margin-top:30px;
     border:2px solid #ea1d2c;
     border-radius:10px;
     cursor: pointer;

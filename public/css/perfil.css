@@ -1,0 +1,44 @@
+section.iFoder{
+    padding-top:120px;
+    display: flex;
+    justify-content: center;
+
+}
+section.iFoder main{
+    display:flex;
+}
+section.iFoder main div.img {
+    flex:1;
+}
+section.iFoder main div.img img{
+    width:100%;
+}
+section.iFoder main div.descrition{
+    flex:2;
+    display: flex;
+    flex-direction: column  ;
+}
+section.iFoder main div.descrition div{
+    flex:1;
+    padding-left: 30px;
+}
+section.iFoder main div.descrition div.up h1{
+    font-size: 50px;
+}
+section.iFoder main div.descrition div.up p{
+    font-size: 25px;
+}
+section.iFoder main div.descrition div.down span{
+    transition:0.5s;
+    background:#ea1d2c;
+    padding:10px 15px;
+    border: 3px solid #ea1d2c;
+    color:#fff;
+    font-size:23px;
+    width:150px;
+    display:flex;
+    justify-content: center;
+    margin:0 10px;
+    border-radius:10px;
+    cursor: pointer;
+}

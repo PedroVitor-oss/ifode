@@ -1,0 +1,77 @@
+<link rel="stylesheet" href="/css/header.css">
+<link rel="stylesheet" href="/css/perfil.css">
+<header>
+    <main>
+        <div class="logo">
+            <a href="/">
+                <span>iFode</span>
+            </a>
+        </div>
+        <div class="tags">
+            <a href="/tags/solteiras">
+                <span>
+                    solteira
+                </span>
+            </a>
+            <a href="/tags/casadas">
+                <span>
+                    casada
+                </span>
+            </a>
+            <a href="/tags/pornStars">
+                <span>
+                    pornStar
+                </span>
+            </a>
+        </div>
+        <div class="conta">
+            <a href="/singin">
+                <span class="button boder">
+                    cadastrar
+                </span>
+            </a>
+            <a href="/login">
+                <span class="button ">
+                    entra
+                </span>
+            </a>
+        </div>
+    </main>
+</header>
+
+<section class="iFoder">
+    <main>
+        
+        
+    </main>
+</section>
+
+<script>
+    let type = "{{nameTag}}"; 
+    let conta = {
+        nome:"{{conta.nome}}",
+        }
+    if(conta.nome!=""){
+        $("header div.conta ").html(`<h1>`+conta.nome+`</h1><i class="fa-solid fa-circle-user"></i>`);
+    }
+$("section.iFoder main").html(`
+
+    <div class="img">
+        <img src="/img/{{perfil.img}}" alt="">
+        </div>
+        <div class="descrition">
+            <div class="up">
+                <h1>{{perfil.nome}}</h1>
+                <p>{{perfil.descricao}}</p>
+            </div>
+            <div class="down" >
+                <a href="/pagamento/`+type+`/{{perfil.nome}}">
+                    <span>comprar serviço</span>
+                </a>
+            </div>
+        </div>
+
+
+`)
+    
+</script>

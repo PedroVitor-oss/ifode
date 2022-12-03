@@ -46,8 +46,12 @@ section.ifoders main{
     display:flex;
     flex-wrap: wrap;
 }
-div.ifoder{
+section.ifoders a{
     width:20%;
+    color:#373733
+}
+section.ifoders a div.ifoder{
+    width:100%;
     border-radius:10px;
     min-height: 350px;
     background:#e8e8e8;

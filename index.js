@@ -39,7 +39,6 @@ app.get("/singin",(req,res)=>{
 app.get("/login",(req,res)=>{
         res.render("login",{contas:contas});
 })
-
 app.post("/login",(req,res)=>{
         for(conta of contas){
                 if(conta.email == req.body.email){
@@ -68,11 +67,11 @@ app.post("/createCont",(req,res)=>{
 })
 app.get("/tags/:name",(req,res)=>{
         if(req.params.name == "solteiras"){
-                res.render("list",{tagActive:0,datas:iFoders.soilteiras,conta:req.session.login})
+                res.render("list",{nameTag:req.params.name,tagActive:0,datas:iFoders.soilteiras,conta:req.session.login})
         }else if(req.params.name == "casadas"){
-                res.render("list",{tagActive:1,datas:iFoders.casadas,conta:req.session.login})
+                res.render("list",{nameTag:req.params.name,tagActive:1,datas:iFoders.casadas,conta:req.session.login})
         }else if(req.params.name == "pornStars"){
-                res.render("list",{tagActive:2,datas:iFoders.pornSatrs,conta:req.session.login})
+                res.render("list",{nameTag:req.params.name,tagActive:2,datas:iFoders.pornSatrs,conta:req.session.login})
         }else{
               res.render("erro404");
         }
@@ -85,6 +84,7 @@ app.post("/addIfoder",(req,res)=>{
                 nome:req.body.name,
                 idade:req.body.idade,
                 img:req.body.img,
+                cidade:req.body.local,
                 descricao:req.body.descricao
         }
         let type = (req.body.type);
@@ -100,6 +100,35 @@ app.post("/addIfoder",(req,res)=>{
           console.log(newIfoder)
         })
         res.render("certo");
+})
+app.get("/iFoder/:type/:name",(req,res)=>{
+        let perfil = undefined;
+        let type = req.params.type;
+        if(type == "solteiras"){
+                for(ifoder of iFoders.soilteiras){
+                        if(ifoder.nome == req.params.name){
+                                perfil = ifoder;
+                        }
+                }
+        }else if(type == "casadas"){
+                for(ifoder of iFoders.casadas){
+                        if(ifoder.nome == req.params.name){
+                                perfil = ifoder;
+                        }
+                }
+        }else if(type == "pornStars"){
+                for(ifoder of iFoders.pornSatrs){
+                        if(ifoder.nome == req.params.name){
+                                perfil = ifoder;
+                        }
+                }
+        }
+        if(perfil!=undefined){
+                res.render("perfilIfoder",{conta:req.session.login,tagName:req.params.type,perfil:perfil});
+                //console.log(perfil);
+        }else{
+                res.render("erro404");
+        }
 })
 app.get("/json1",(req,res)=>{
         res.send(contas);
