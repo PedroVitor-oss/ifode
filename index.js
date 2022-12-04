@@ -1,6 +1,9 @@
 const express = require('express');
 const app = express();
 const port = process.env.PORT || 3000;
+
+//carregar models 
+const multer = require('./models/multer.js')
 //carregar componentes
 const header = require('./components/header.js')
 //configuração de handlebars
@@ -105,27 +108,31 @@ app.get("/tags/:name", (req, res) => {
 app.get("/adm/cadastreIFoder", (req, res) => {
         res.render("cadastre_i_foder");
 })
-app.post("/addIfoder", (req, res) => {
-        let newIfoder = {
-                nome: req.body.name,
-                idade: req.body.idade,
-                img: req.body.img,
-                cidade: req.body.local,
-                descricao: req.body.descricao
+app.post("/addIfoder", multer.single('img'), (req, res) => {
+        if (req.file) {
+                let newIfoder = {
+                        nome: req.body.name,
+                        idade: req.body.idade,
+                        img:req.file.originalname,
+                        cidade: req.body.local,
+                        descricao: req.body.descricao
+                }
+                let type = (req.body.type);
+                if (type == "solteira") {
+                        iFoders.soilteiras.push(newIfoder);
+                } else if (type == "casada") {
+                        iFoders.casadas.push(newIfoder);
+                } else if (type == "pornStar") {
+                        iFoders.pornSatrs.push(newIfoder);
+                }
+                //iFoders.push(newIfoder);
+                fs.writeFile('./data/ifoders.json', JSON.stringify(iFoders, null, 2), () => {
+                        console.log(req.file)
+                })
+                res.render("certo");
+        }else{
+                res.send("o correu um erro ");
         }
-        let type = (req.body.type);
-        if (type == "solteira") {
-                iFoders.soilteiras.push(newIfoder);
-        } else if (type == "casada") {
-                iFoders.casadas.push(newIfoder);
-        } else if (type == "pornStar") {
-                iFoders.pornSatrs.push(newIfoder);
-        }
-        //iFoders.push(newIfoder);
-        fs.writeFile('./data/ifoders.json', JSON.stringify(iFoders, null, 2), () => {
-                console.log(newIfoder)
-        })
-        res.render("certo");
 })
 app.get("/iFoder/:type/:name", (req, res) => {
         let perfil = undefined;

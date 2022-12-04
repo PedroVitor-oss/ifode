@@ -7,7 +7,17 @@
 </section>
 <section class="ifoders">
     <main>
-       
+       {{#each datas}}
+       <a href="{{nome}}">
+            <div class="ifoder">   
+                <div class="img">
+                <img src="{{img}}" alt="" srcset="">
+                </div>
+                <h1 class="name">{{nome}}</h1>
+                <h1>{{cidade}}</h1>
+            </div>
+        </a>
+       {{/each}}
 
     </main>
 </section>
@@ -55,19 +65,13 @@ let conta = {
     }
     {{/each}}
     ]
-    for(data of datas){
-        $("section.ifoders main").append(`
-        <a href="/iFoder/`+type+`/`+data.nome+`">
-            <div class="ifoder">   
-                <div class="img">
-                <img src="/img/`+data.img+`" alt="" srcset="">
-                </div>
-                <h1 class="name">`+data.nome+`</h1>
-                <h1>`+data.cidade+`</h1>
-            </div>
-        </a>
-        
-        `)
+    let list =  $("section.ifoders main a div.img img");
+    for(item of list){
+        $(item).attr("src","/img/"+$(item).attr("src"));
+    }
+    let listimg =  $("section.ifoders main a");
+    for(item of listimg){
+        $(item).attr("href","/iFoder/"+type+"/"+$(item).attr("href"));
     }
     $("button#bt-busca").click(()=>{
         for (data of datas){

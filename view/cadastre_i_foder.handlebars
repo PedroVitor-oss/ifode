@@ -2,7 +2,7 @@
 
 
 <div class="card">
-        <form action="/addIfoder" method="post">
+        <form action="/addIfoder" method="post" enctype="multipart/form-data">
             <h1 class="title">Quem é o novo iFoder?</h1>
             <h1>Nome</h1>
             <input type="text" name="name" placeholder="Nome" required>
@@ -16,7 +16,7 @@
                 <option value="pornStar">pornStar</option>
             </select>
             <h1>Nome do arquivo imagem</h1>
-            <input type="text" name="img">
+            <input type="file" name="img">
              <h1>De onde é?</h1>
             <input type="text" name="local">
             <h1>Descrição</h1>
