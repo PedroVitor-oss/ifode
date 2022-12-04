@@ -2,6 +2,7 @@ section.iFoder{
     padding-top:120px;
     display: flex;
     justify-content: center;
+    height:60vh;
 
 }
 section.iFoder main{
@@ -27,6 +28,10 @@ section.iFoder main div.descrition div.up h1{
 }
 section.iFoder main div.descrition div.up p{
     font-size: 25px;
+}
+section.iFoder main div.descrition div.down{
+    display:flex;
+    align-items: center;
 }
 section.iFoder main div.descrition div.down span{
     transition:0.5s;

@@ -7,9 +7,9 @@
         
     </main>
 </section>
-
+{{{rodape}}}
 <script>
-    let type = "{{nameTag}}"; 
+    let type = "{{tagName}}"; 
     let conta = {
         nome:"{{conta.nome}}",
         }
@@ -30,10 +30,13 @@ $("section.iFoder main").html(`
                 <a href="/pagamento/`+type+`/{{perfil.nome}}">
                     <span>comprar serviço</span>
                 </a>
+                {{{perfil.map}}}
             </div>
         </div>
 
 
 `)
+$("iframe").attr("width","500");
+$("iframe").attr("height","350")
     
 </script>

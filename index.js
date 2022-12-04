@@ -120,6 +120,7 @@ app.post("/addIfoder", multer.single('img'), (req, res) => {
                         idade: req.body.idade,
                         img:req.file.originalname,
                         cidade: req.body.local,
+                        map: req.body.map,
                         descricao: req.body.descricao
                 }
                 let type = (req.body.type);
@@ -166,7 +167,8 @@ app.get("/iFoder/:type/:name", (req, res) => {
                         conta: req.session.login,
                         tagName: req.params.type,
                         perfil: perfil,
-                        header:header
+                        header:header,
+                        rodape:rodape
                 });
               
         } else {
