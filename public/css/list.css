@@ -40,7 +40,7 @@ section.busca main button{
 section.ifoders{
     display: flex;
     justify-content: center;
-   
+   min-height:100vh
 }
 section.ifoders main{
     display:flex;

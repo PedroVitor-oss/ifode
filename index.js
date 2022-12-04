@@ -6,6 +6,7 @@ const port = process.env.PORT || 3000;
 const multer = require('./models/multer.js')
 //carregar componentes
 const header = require('./components/header.js')
+const rodape = require('./components/rodape.js')
 //configuração de handlebars
 const handlebars = require('express-handlebars');
 app.engine('handlebars', handlebars.engine('main'));
@@ -30,13 +31,14 @@ fs.readFile('./data/contas.json', 'utf-8', (erro, data) => {
 let iFoders;
 fs.readFile('./data/ifoders.json', 'utf-8', (erro, data) => {
         iFoders = JSON.parse(data);
-        console.log(iFoders);
+
 })
 
 app.get('/', (req, res) => {
         res.render("home", {
                 conta: req.session.login,
-                header:header
+                header:header,
+                rodape:rodape
         });
 
 })
@@ -83,7 +85,8 @@ app.get("/tags/:name", (req, res) => {
                         tagActive: 0,
                         datas: iFoders.soilteiras,
                         conta: req.session.login,
-                        header:header
+                        header:header,
+                        rodape:rodape
                 })
         } else if (req.params.name == "casadas") {
                 res.render("list", { 
@@ -91,7 +94,8 @@ app.get("/tags/:name", (req, res) => {
                         tagActive: 1, 
                         datas: iFoders.casadas, 
                         conta: req.session.login ,
-                        header:header
+                        header:header,
+                        rodape:rodape
                 })
         } else if (req.params.name == "pornStars") {
                 res.render("list", { 
@@ -99,7 +103,8 @@ app.get("/tags/:name", (req, res) => {
                         tagActive: 2,
                         datas: iFoders.pornSatrs,
                         conta: req.session.login,
-                        header:header
+                        header:header,
+                        rodape:rodape
                         })
         } else {
                 res.render("erro404");
@@ -125,9 +130,9 @@ app.post("/addIfoder", multer.single('img'), (req, res) => {
                 } else if (type == "pornStar") {
                         iFoders.pornSatrs.push(newIfoder);
                 }
-                //iFoders.push(newIfoder);
+             
                 fs.writeFile('./data/ifoders.json', JSON.stringify(iFoders, null, 2), () => {
-                        console.log(req.file)
+                        console.log("novo iFoder cadastrado");
                 })
                 res.render("certo");
         }else{
@@ -163,7 +168,7 @@ app.get("/iFoder/:type/:name", (req, res) => {
                         perfil: perfil,
                         header:header
                 });
-                //console.log(perfil);
+              
         } else {
                 res.render("erro404");
         }
